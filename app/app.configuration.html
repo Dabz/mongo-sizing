@@ -1,0 +1,26 @@
+<div class="row">
+  <label>#Shards
+    <input type="number" [(ngModel)]="mongo.shards" min="1" />
+  </label>
+</div>
+<hr/>
+<div class="row">
+  <label>Storage engine
+    <select [(ngModel)]="mongo.engine">
+      <option *ngFor="#engine of engines" value="{{engine}}">{{engine}}</option>
+    </select>
+  </label>
+</div>
+<div class="row">
+  <label>Compression
+    <select [(ngModel)]="mongo.compression">
+      <option *ngFor="#compression of compressions" value="{{compression}}">{{compression}}</option>
+    </select>
+  </label>
+</div>
+<hr/>
+<div class="row">
+  <label>Oplog size GB
+    <input type="number" [(ngModel)]="mongo.oplog" min="1" />
+  </label>
+</div>

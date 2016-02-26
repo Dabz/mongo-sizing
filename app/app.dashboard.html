@@ -1,0 +1,49 @@
+<div class="off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+      <ul class="mobile-ofc vertical menu">
+        <li><a>Configuration</a></li>
+        <li style="padding: 15px;"><mdb-configuration>Loading...</mdb-configuration></li>
+      </ul>
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div class="title-bar">
+        <div class="title-bar-left">
+          <button class="menu-icon" type="button" data-open="offCanvas"></button>
+          <span class="title-bar-title">MongoDB sizing tool</span>
+        </div>
+      </div>
+
+      <div class="reveal" id="newEntry" data-reveal>
+        <h3>New collection</h3>
+        <mdb-newentry>Loading</mdb-newentry>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div>
+        <div *ngIf="mongo.collections.length == 0">
+          <p class="float-center" style="font-size: 200px; margin: auto;text-align: center; vertical-align: middle; padding-top: 15%">
+            <a data-open="newEntry"><i class="fa fa-pencil-square-o"></i></a>
+          </p>
+        </div>
+        <div *ngIf="mongo.collections.length > 0">
+          <ul class="tabs" data-tabs style="{{! initializeTab()}}">
+            <li *ngFor="#collection of mongo.collections" class="tabs-title"><a href="{{'#' + collection.name}}" aria-selected="true" style="color: #E82121;">{{collection.name}}</a></li>
+            <li style="display: table; height: 50px; float: right; margin-right: 20px"><a data-open="newEntry" style="vertical-align: middle; display: table-cell; margin-right: 20px"><i class="fa fa-plus"></i></a></li>
+            <li class="tabs-title"><a href="#sizingPanel" onclick="{{mongo.compute()}}">Sizing</a></li>
+          </ul>
+          <div class="tabs-content" data-tabs-content="example-tabs" style="border-bottom: 0;">
+            <div class="tabs-panel" *ngFor="#collection of mongo.collections" id="{{collection.name}}">
+              <mdb-collection [collection]="collection">Loading...</mdb-collection>
+            </div>
+            <div class="tabs-panel" id="sizingPanel">
+              <mdb-sizing>Loading...</mdb-sizing>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

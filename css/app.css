@@ -1,0 +1,21 @@
+.title-bar {
+  background-color: rgba(66,73,79,0.94);
+  color: white;
+}
+
+.off-canvas {
+  background-color: #f5f6f7;
+  color: white;
+  min-height: 100%;
+}
+
+pre { overflow: hidden; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+table tbody tr {
+  background-color: rgba(66,73,79,0.001) !important;
+}

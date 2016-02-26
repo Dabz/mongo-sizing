@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="form-group">
+    <input type="text" placeholder="Name" [(ngModel)]="name" />
+    <input type="text" placeholder="Index1;Index2;Index3" [(ngModel)]="indexes" />
+    <textarea placeholder="Sample document" rows=8 [(ngModel)]="json"></textarea>
+    <button (click)="save()"  type="button" class="success button float-right">Add</button>
+  </div>
+</div>
