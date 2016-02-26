@@ -1,0 +1,9 @@
+app/**.js
+app/**/*.js
+**.map
+typings/**
+**.swp
+**.swo
+**.swa
+**.swn
+node_modules

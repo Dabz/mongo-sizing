@@ -20,9 +20,9 @@
     <div *ngFor="#shard of mongo.getShards()">
       <table>
         <thead>
-          <td colspan=2>Shard {{shard.id}}</td>
+          <td colspan=2>Shard {{shard.id + 1}}</td>
         </thead>
-        <tr><td>Estimated number of document</td><td>{{(mongo.numberOfDocument / mongo.shards) | number}}</td></tr>
+        <tr><td>Estimated number of documents</td><td>{{(mongo.numberOfDocument / mongo.shards) | number}}</td></tr>
         <tr><td>Estimated number of indexes</td><td>{{(mongo.numberOfIndexes)}}</td></tr>
         <tr><td>Estimated data size</td><td>{{mongo.formatSize(mongo.dataSize / mongo.shards)}}</td></tr>
         <tr><td>Estimated index size</td><td>{{mongo.formatSize(mongo.indexSize / mongo.shards)}}</td></tr>

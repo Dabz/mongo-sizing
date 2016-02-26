@@ -13,6 +13,9 @@
     <script src="js/foundation.js"></script>
     <script src="js/rj.min.js"></script>
     <script src="js/bson.js"></script>
+    <script src="js/FileSaver.js"></script>
+    <script src="node_modules/intl/dist/Intl.min.js"></script>
+    <script src="node_modules/intl/locale-data/jsonp/en.js"></script>
     <script>
       System.config({
         packages: {
@@ -36,7 +39,9 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
   </head>
   <body>
-    <mdb-dashboard>Loading</mdb-dashboard>
+    <div id="outer-wrap">
+      <mdb-dashboard>Loading</mdb-dashboard>
+    </div>
   </body>
 </html>
 

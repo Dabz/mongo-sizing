@@ -1,0 +1,89 @@
+<div class="row">
+
+   <div class="reveal" id="newIndex-{{collection.name}}" data-reveal>
+     <h3>New index</h3>
+     <hr />
+     <mdb-newindex [collection]="collection">Loading</mdb-newindex>
+     <button class="close-button" data-close aria-label="Close modal" type="button">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+
+   <div class="reveal" id="editDocument-{{collection.name}}" data-reveal>
+     <h3>Edit sample document</h3>
+     <hr />
+     <mdb-editdocument [collection]="collection">Loading</mdb-editdocument>
+     <button class="close-button" data-close aria-label="Close modal" type="button">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+
+  <div class="medium-6 column">
+    <h5>Sample document</h5>
+    <a href="#" (click)='openEditDocument()'><pre innerHTML="{{syntaxHighlight(collection.json)}}"></pre></a>
+    <hr />
+    <h5>Indexes</h5>
+    <div *ngFor="#index of collection.indexes">
+      <div class="row">
+        <div class="medium-6 columns">
+          <pre innerHTML="{{syntaxHighlight(index.json)}}"></pre>
+        </div>
+        <div class="medium-6 columns">
+          <div>
+            <ul class="vertical dropdown menu float-right" data-dropdown-menu style="max-width: 300px;">
+              <li>
+              <a href="#">
+                <span style="color: grey; white-space:pre">{{mongo.formatSize(index.averageKeySize)}}   </span>
+                <span class="info"><i class="fa fa-wrench"></i></span>
+              </a>
+              <ul class="menu">
+                <li><a (click)="openNewIndex()">add</a></li>
+                <li><a (click)="collection.removeIndex(index.json)">remove</a></li>
+              </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="medium-6 column">
+    <div class="">
+      <h5 style="padding-left: 25px">Statistics</h5>
+      <div class="row">
+        <div class="small-7 columns"><label class="text-right middle">Average document size</label></div>
+        <div class="small-5 columns"><input class="medium-7" type='text' readonly [value]="mongo.formatSize(collection.averageDocumentSize)" /></div>
+      </div>
+      <div class="row">
+        <div class="small-7 columns"><label class="text-right middle">Number of document</label></div>
+        <div class="small-5 columns"><input class="medium-7" type='number' min="1" [(ngModel)]="collection.numberOfDocument" /></div>
+      </div>
+      <div class="row">
+        <div class="small-7 columns"><label class="text-right middle">Documents in memory</label></div>
+        <div class="small-5 columns"><input class="medium-7" type='number' min="1" [(ngModel)]="collection.numberOfDocumentInMemory" /></div>
+      </div>
+
+      <h5 style="padding-left: 25px;">Sizing</h5>
+      <div class="row">
+        <div class="small-7 columns"><label class="text-right middle">Estimated data size</label></div>
+        <div class="small-5 columns"><p class="mimic">{{mongo.formatSize(collection.dataSize)}}</p></div>
+      </div>
+      <div class="row">
+        <div class="small-7 columns"><label class="text-right middle">Estimated index size</label></div>
+        <div class="small-5 columns"><p class="mimic">{{mongo.formatSize(collection.indexSize)}}</p></div>
+      </div>
+      <div class="row">
+        <div class="small-7 columns"><label class="text-right middle">Estimated documents storage size</label></div>
+        <div class="small-5 columns"><p class="mimic">{{mongo.formatSize(collection.storageSize)}}</p></div>
+      </div>
+      <div class="row">
+        <div class="small-7 columns"><label class="text-right middle">Estimated collection storage size</label></div>
+        <div class="small-5 columns"><p class="mimic">{{mongo.formatSize(collection.totalStorageSize)}}</p></div>
+      </div>
+      <div class="row">
+        <div class="small-7 columns"><label class="text-right middle">Estimated memory usage</label></div>
+        <div class="small-5 columns"><p class="mimic">{{mongo.formatSize(collection.memoryRequirement)}}</p></div>
+      </div>
+    </div>
+  </div>
+</div>

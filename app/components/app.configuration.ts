@@ -1,9 +1,9 @@
-import {Component} from 'angular2/core';
-import {MongoService} from './mongo.service';
+import {Component, ChangeDetectionStrategy} from 'angular2/core';
+import {MongoService} from '/app/services/mongo.service';
 
 @Component({
     selector: 'mdb-configuration',
-    templateUrl: '/app/app.configuration.html'
+    templateUrl: '/app/templates/app.configuration.html'
 })
 export class ConfigurationComponent {
   compressions: string[] =  ["snappy", "zlib", "none"]

@@ -6,14 +6,14 @@
 <hr/>
 <div class="row">
   <label>Storage engine
-    <select [(ngModel)]="mongo.engine">
+    <select [(ngModel)]="mongo.engine" (change)="mongo.engine = $event.target.value; mongo.compute()" >
       <option *ngFor="#engine of engines" value="{{engine}}">{{engine}}</option>
     </select>
   </label>
 </div>
 <div class="row">
   <label>Compression
-    <select [(ngModel)]="mongo.compression">
+    <select [(ngModel)]="mongo.compression" (change)="mongo.compression = $event.target.value; mongo.compute()">
       <option *ngFor="#compression of compressions" value="{{compression}}">{{compression}}</option>
     </select>
   </label>
@@ -21,6 +21,6 @@
 <hr/>
 <div class="row">
   <label>Oplog size GB
-    <input type="number" [(ngModel)]="mongo.oplog" min="1" />
+    <input type="number" [(ngModel)]="mongo.oplog" min="1" (change)="mongo.compute()" />
   </label>
 </div>
