@@ -49,7 +49,7 @@ export class AppDashboard {
       let reader = new FileReader();
       reader.onload = function() {
         let deserialize_string = this.result
-        let deserialize_object = rj.parse(deserialize_string)
+        let deserialize_object = RJSON.parse(deserialize_string)
         service.deserialize(deserialize_object)
         service.compute()
         setTimeout(function() {

@@ -43,7 +43,7 @@
 
       <div>
         <div *ngIf="mongo.collections.length == 0">
-          <p class="float-center" style="font-size: 9em; margin: auto;text-align: center; vertical-align: middle; padding-top: 15%">
+          <p class="float-center" style="font-size: 9em; margin: auto;text-align: center; vertical-align: middle; padding-top: 15%; min-height: 700;">
           <a data-open="newEntry"><i class="fa fa-5 fa-file-text-o"></i><br /><span style="font-size: 20px">new collection</span></a></p>
         </div>
         <div *ngIf="mongo.collections.length > 0">
@@ -52,7 +52,7 @@
             <li style="display: table; height: 50px; float: right; margin-right: 30px"><a data-open="newEntry" style="vertical-align: middle; display: table-cell;"><i class="fa fa-plus"></i></a></li>
             <li class="tabs-title"><a href="#sizingPanel" (click)="mongo.compute()">Sizing</a></li>
           </ul>
-          <div class="tabs-content" style="border-bottom: 0;">
+          <div class="tabs-content" style="border-bottom: 0; min-height: 700">
             <div class="tabs-panel" *ngFor="#collection of mongo.collections" id="{{collection.name}}">
               <mdb-collection [collection]="collection">Loading...</mdb-collection>
             </div>

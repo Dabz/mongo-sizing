@@ -30,7 +30,9 @@ export class NewCollectionComponent {
     try {
       this.json = this.json.replace(/ObjectId\(.*?\)/g, '"$id"').replace(/ISODate\(.*?\)/, '"$date"')
       this.json = this.json.replace(/Timestamp\(.*?\)/, '$timestamp').replace(/new\s+Date\(.*?\)/g, '$date')
-      let jsonparsed = rj.parse(this.json)
+      this.json = this.json.replace(/NumberLong\(.*?\)/, '1')
+
+      let jsonparsed = RJSON.parse(this.json)
       if (jsonparsed._id === undefined) {
         jsonparsed = jQuery.extend({_id: "$id"}, jsonparsed)
       }
@@ -51,7 +53,7 @@ export class NewCollectionComponent {
           continue
         }
         let index = new MongoIndex()
-        let ji = rj.parse(idx[key])
+        let ji = RJSON.parse(idx[key])
         index.json = ji
         index.keys = []
         for (let attr in ji) {

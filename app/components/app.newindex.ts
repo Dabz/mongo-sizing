@@ -20,7 +20,7 @@ export class NewIndexComponent {
   public save() {
     let index = new MongoIndex
     try {
-      index.json = rj.parse(this.key)
+      index.json = RJSON.parse(this.key)
     } catch (e) {
       alert(e);
       return;
