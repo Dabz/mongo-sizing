@@ -1,7 +1,7 @@
 .title-bar {
   background-color: rgba(66,73,79,0.94);
   color: white;
-  height: 40px;
+  height: 45px;
 }
 
 .off-canvas {
@@ -12,9 +12,9 @@
 pre { overflow: auto; }
 .string { color: rgba(0, 128, 0, 0.72); }
 .number { color: rgba(255, 140, 0, 0.71); }
-.boolean { color:rgba(0, 0, 255, 0.62);; }
+.boolean { color:rgba(0, 0, 255, 0.62); }
 .null { color: rgba(255, 0, 255, 0.66); }
-.key { color: rgba(255, 0, 0, 0.57); }
+.key { color: rgba(0, 0, 0, 0.57); font-weight: 'bold' }
 
 table tbody tr {
   background-color: rgba(66,73,79,0.001) !important;
