@@ -32,7 +32,7 @@ until finished
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Using the Tool
-![Using the tool](mongo-sizing/mongosizing.gif)
+![Using the tool](https://github.com/mrlynn/mongo-sizing/blob/master/mongosizing.gif)
 
 1. To use this tool for a sizing exercise, you start by clicking 'New Collection'.
 
