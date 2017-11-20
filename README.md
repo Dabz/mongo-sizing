@@ -32,41 +32,16 @@ until finished
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Using the Tool
-![Using the tool](https://github.com/mrlynn/mongo-sizing/blob/master/mongosizing.gif)
+![Using the tool](mongo-sizing/mongosizing.gif)
 
 1. To use this tool for a sizing exercise, you start by clicking 'New Collection'.
 
 1. A modal dialogue will appear that will enable you to create (or paste in) a sample document. 
+1. click Add.
+2. Notice there will be a tab created for your collection.  Click the body of your newly created document to modify it.  
+3. Click the Sizing tab to view details of the sizing recommendations.
+4. Modify the number of shards, avg document count and other settings to view detailed statistics.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
