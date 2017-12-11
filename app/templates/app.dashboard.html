@@ -3,7 +3,7 @@
     <div class="off-canvas position-left reveal-for-large" id="offCanvas" data-off-canvas>
       <div class="title-bar show-for-large show-for-xlarge">
         <div class="title-bar-left">
-          <span class="title-bar-title">MongoDB sizing tool</span>
+          <span class="title-bar-title">MongoDB Sizing Tool</span>
         </div>
       </div>
       <ul class="mobile-ofc vertical menu">
@@ -21,7 +21,9 @@
             <span class="title-bar-title" style="color: rgba(66, 73, 79, 0);">|</span>
           </div>
           <div class="top-bar-right">
-            <p class="align-right"><a class="tiny data-dropdown-menu button" style="white-space: pre" data-toggle="action-panel"><i class="fa fa-cog"></i></a></p>
+            <p class="align-right">
+              <a class="tiny data-dropdown-menu button" style="white-space: pre" data-toggle="action-panel"><i class="fa fa-cog"></i></a>
+            </p>
             <ul id="action-panel" class="dropdown-pane li-border" id="action-panel" data-dropdown data-close-on-click=true>
               <li><a href="#" data-open="newEntry"><i class="fa fa-plus"></i> New Collection</a></li>
               <li *ngIf="mongo.collections.length > 0" ><a href="#" (click)='save()'><i class="fa fa-file"></i> Save Project</a></li>
@@ -48,7 +50,7 @@
         </div>
         <div *ngIf="mongo.collections.length > 0">
           <ul class="tabs" data-tabs>
-            <li *ngFor="#collection of mongo.collections" class="tabs-title"><a href="{{'#' + collection.name}}" aria-selected="true" style="color: #E82121;">{{collection.name}}</a></li>
+            <li *ngFor="#collection of mongo.collections" class="tabs-title"><a href="{{'#' + collection.name}}" aria-selected="true" style="color: rgb(40, 110, 35);">{{collection.name}}</a></li>
             <li style="display: table; height: 50px; float: right; margin-right: 30px"><a data-open="newEntry" style="vertical-align: middle; display: table-cell;"><i class="fa fa-plus"></i></a></li>
             <li class="tabs-title"><a href="#sizingPanel" (click)="mongo.compute()">Sizing</a></li>
           </ul>
