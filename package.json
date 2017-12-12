@@ -1,6 +1,7 @@
 {
   "name": "mongo-sizing-estimate",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "postinstall": "npm run typings install",
     "tsc": "tsc",
@@ -11,16 +12,17 @@
   },
   "license": "ISC",
   "dependencies": {
-    "relaxed-json": "1.0.0",
+    "angular2": "2.0.0-beta.6",
+    "concurrent": "^0.3.2",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
     "font-awesome": "4.5.0",
     "intl": "1.1.0",
     "jquery": "2.2.0",
-    "angular2": "2.0.0-beta.6",
-    "systemjs": "0.19.20",
-    "es6-promise": "^3.0.2",
-    "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
+    "relaxed-json": "1.0.0",
     "rxjs": "5.0.0-beta.0",
+    "systemjs": "0.19.20",
     "zone.js": "0.5.14"
   },
   "devDependencies": {
