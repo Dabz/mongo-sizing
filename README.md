@@ -22,6 +22,17 @@ A step by step series of examples that tell you have to get a development env ru
 ```
 brew install node
 ```
+## Start the server
+
+```
+cd mongo-sizing
+
+# install all necessary packages 
+npm install
+
+# start the server
+npm start
+```
 
 ## Using the Tool
 ![Using the tool](mongo-sizing/mongosizing.gif)
